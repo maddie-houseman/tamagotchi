@@ -55,6 +55,11 @@ def sleep(self):
         self.health += 10  # Sleeping improves health
         self.check_limits()
 
+def doctor(self):
+     self.update()
+     self.health = 100
+     self.check_limits()
+
 def check_limits(self):
         if self.health > 100:
             self.health = 100
