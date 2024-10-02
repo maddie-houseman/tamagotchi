@@ -9,6 +9,8 @@ class Tamagotchi:
         self.age = 0
         self.weight = 5
         self.intelligence = 50
+        self.hunger=0
+        self.strength=10
         self.last_interaction_time = time.time()
 
     def update(self):
