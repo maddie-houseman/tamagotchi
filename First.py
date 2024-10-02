@@ -11,7 +11,7 @@ class Tamagotchi:
         self.intelligence = 50
         self.last_interaction_time = time.time()
 
-    def update(self):
+def update(self):
         current_time = time.time()
         time_elapsed = current_time - self.last_interaction_time
 
@@ -26,7 +26,7 @@ class Tamagotchi:
         # Update the last interaction time
         self.last_interaction_time = current_time
 
-    def feed(self, food):
+def feed(self, food):
         self.update()
         if food == 'healthy':
             self.health += 5
@@ -37,26 +37,26 @@ class Tamagotchi:
             self.health -= 5
         self.check_limits()
 
-    def wash(self):
+def wash(self):
         self.update()
         self.hygiene = 100
         self.happiness -= 5  # Some tamagotchis might not enjoy washing
         self.check_limits()
 
-    def play(self):
+def play(self):
         self.update()
         self.happiness += 10
         self.hygiene -= 10
         self.health -= 2  # Playing can be tiring
         self.check_limits()
 
-    def sleep(self):
+def sleep(self):
         self.update()
         self.health += 10  # Sleeping improves health
         self.happiness -= 5  # Some may not want to sleep!
         self.check_limits()
 
-    def check_limits(self):
+def check_limits(self):
         if self.health > 100:
             self.health = 100
         elif self.health < 0:
