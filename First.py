@@ -27,6 +27,8 @@ def update(self):
 
         # Update the last interaction time
         self.last_interaction_time = current_time
+        
+        return self.happiness
 
 def feed(self, food):
         self.update()
@@ -88,3 +90,7 @@ def save_state(self):
         'weight': self.weight,
         'intelligence': self
     }
+
+
+thisTamagotchi=Tamagotchi("Maddie")
+print(update(thisTamagotchi))
