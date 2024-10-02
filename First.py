@@ -9,8 +9,8 @@ class Tamagotchi:
         self.age = 0
         self.weight = 5
         self.intelligence = 50
-        self.hunger=0
-        self.strength=10
+        self.hunger = 0
+        self.strength = 10
         self.last_interaction_time = time.time()
 
 def update(self):
@@ -42,20 +42,17 @@ def feed(self, food):
 def wash(self):
         self.update()
         self.hygiene = 100
-        self.happiness -= 5  # Some tamagotchis might not enjoy washing
         self.check_limits()
 
 def play(self):
         self.update()
         self.happiness += 10
         self.hygiene -= 10
-        self.health -= 2  # Playing can be tiring
         self.check_limits()
 
 def sleep(self):
         self.update()
         self.health += 10  # Sleeping improves health
-        self.happiness -= 5  # Some may not want to sleep!
         self.check_limits()
 
 def check_limits(self):
