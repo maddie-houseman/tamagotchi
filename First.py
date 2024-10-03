@@ -3,14 +3,14 @@ import time
 class Tamagotchi:
     def __init__(self, name):
         self.name = name
-        self.health = 100
-        self.happiness = 100
-        self.hygiene = 100
-        self.age = 0
-        self.weight = 5
-        self.intelligence = 50
-        self.hunger = 0
-        self.strength = 10
+        self.health = 100 # 100 (high) - 0 (low)
+        self.happiness = 100 # 100 (high) - 0 (low)
+        self.hygiene = 100 # 100 (high) - 0 (low)
+        self.age = 0 # 0 (low) - 75 (high)
+        self.weight = 5 # 
+        self.intelligence = 50 # 50 (base) - 150 (highest)
+        self.hunger = 0 # 0 (low) - 10 (starving)
+        self.strength = 0 # 0 (lowest)
         self.last_interaction_time = time.time()
 
 def update(self):
@@ -60,6 +60,11 @@ def sleep(self):
 def doctor(self):
      self.update()
      self.health = 100
+     self.check_limits()
+
+def workout(self):
+     self.update()
+     self.strength += 1
      self.check_limits()
 
 def check_limits(self):
