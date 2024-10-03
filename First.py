@@ -19,7 +19,7 @@ def update(self):
 
         # Decrease health, happiness, and hygiene over time
         self.health -= time_elapsed * 0.01  # Health decreases slightly over time
-        self.happiness -= time_elapsed * 10
+        self.happiness -= time_elapsed * 0.01
         self.hygiene -= time_elapsed * 0.03
         
         # Aging the Tamagotchi over time (e.g., 1 unit per hour)
