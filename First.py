@@ -144,7 +144,7 @@ file = open('stats.txt', 'r')
 data = file.read() 
 # replacing end of line('/n') with ' ' and 
 # splitting the text it further when '.' is seen. 
-data_into_list = data.replace('\n', ' ').split(".") 
+data_into_list = data.replace('\n', ' ').split(",") 
 # printing the data 
 print(data_into_list) 
 file.close() 
