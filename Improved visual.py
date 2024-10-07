@@ -39,7 +39,7 @@ doctorPressed = False
 workoutPressed = False
 studyPressed = False
 
-# Tamagotchi attributes
+# Tamagotchi attributes OBVIOUSLY WILL TAKE ATTRIBUTES FROM MADDIES CODE
 tamagotchi_stats = {
     "name": "Tommy",
     "health": 80,
