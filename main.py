@@ -41,20 +41,6 @@ doctorPressed = False
 workoutPressed = False
 studyPressed = False
 
-# Tamagotchi attributes OBVIOUSLY WILL TAKE ATTRIBUTES FROM MADDIES CODE
-tamagotchi_stats = {
-    "name": "Tommy",
-    "health": 80,
-    "happiness": 60,
-    "age": 10,
-    "weight": 5,
-    "intelligence": 40,
-    "hunger": 50,
-    "strength": 30
-}
-
-# Age of the Tamagotchi (for testing)
-age = 0
 
 # Button class
 class Button:
@@ -105,18 +91,6 @@ def display_tamagotchi(age):
     tamagotchi_y = (available_height - tamagotchi_image.get_height()) // 4  # Slightly higher to leave room for the buttons
 
     screen.blit(tamagotchi_image, (tamagotchi_x, tamagotchi_y))
-
-# Function to display Tamagotchi stats
-def display_stats():
-    # Fill the stats column background with blue
-    pygame.draw.rect(screen, BLUE, (SCREEN_WIDTH - STATS_WIDTH, 0, STATS_WIDTH, SCREEN_HEIGHT - BUTTON_HEIGHT))
-
-    font = pygame.font.Font(None, 32)  # Slightly smaller font size for stats
-    y_offset = 50
-    for key, value in tamagotchi_stats.items():
-        text_surf = font.render(f"{key.capitalize()}: {value}", True, BLACK)
-        screen.blit(text_surf, (SCREEN_WIDTH - STATS_WIDTH + 20, y_offset))
-        y_offset += 50  # Increased line height for readability
 
 class Tamagotchi:
     def __init__(self, name):
@@ -257,6 +231,34 @@ thisTamagotchi.feed("healthy")
 thisTamagotchi.resetting_attributes_infile()
 print("new attributes from game played")
 thisTamagotchi.print_attributes2()
+
+# Tamagotchi attributes OBVIOUSLY WILL TAKE ATTRIBUTES FROM MADDIES CODE
+tamagotchi_stats = {
+    "name": "Tommy",
+    "health": 80,
+    "happiness": 60,
+    "age": 10,
+    "weight": 5,
+    "intelligence": 40,
+    "hunger": 50,
+    "strength": 30
+}
+
+# Age of the Tamagotchi (for testing)
+age = 0
+
+# Function to display Tamagotchi stats
+def display_stats():
+    # Fill the stats column background with blue
+    pygame.draw.rect(screen, BLUE, (SCREEN_WIDTH - STATS_WIDTH, 0, STATS_WIDTH, SCREEN_HEIGHT - BUTTON_HEIGHT))
+
+    font = pygame.font.Font(None, 32)  # Slightly smaller font size for stats
+    y_offset = 50
+    for key, value in tamagotchi_stats.items():
+        text_surf = font.render(f"{key.capitalize()}: {value}", True, BLACK)
+        screen.blit(text_surf, (SCREEN_WIDTH - STATS_WIDTH + 20, y_offset))
+        y_offset += 50  # Increased line height for readability
+
 
 # Main game loop
 running = True
