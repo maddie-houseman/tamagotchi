@@ -234,18 +234,18 @@ thisTamagotchi.print_attributes2()
 
 # Tamagotchi attributes OBVIOUSLY WILL TAKE ATTRIBUTES FROM MADDIES CODE
 tamagotchi_stats = {
-    "name": "Tommy",
-    "health": 80,
-    "happiness": 60,
-    "age": 10,
-    "weight": 5,
-    "intelligence": 40,
-    "hunger": 50,
-    "strength": 30
+    "name": thisTamagotchi.name_getter(),
+    "health": thisTamagotchi.health_getter(),
+    "happiness": thisTamagotchi.happiness_getter(),
+    "age": int(thisTamagotchi.age_getter()),  # Convert age to integer for display
+    "weight": thisTamagotchi.weight_getter(),
+    "intelligence": thisTamagotchi.intelligence_getter(),
+    "hunger": thisTamagotchi.hunger_getter(),
+    "strength": thisTamagotchi.strength_getter()
 }
 
 # Age of the Tamagotchi (for testing)
-age = 0
+age = int(thisTamagotchi.age_getter())
 
 # Function to display Tamagotchi stats
 def display_stats():
@@ -308,4 +308,3 @@ while running:
 # Quit pygame
 pygame.quit()
 sys.exit()
-
