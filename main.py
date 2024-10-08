@@ -133,17 +133,14 @@ class Tamagotchi:
         self.happiness -= time_elapsed * 0.01
         self.hygiene -= time_elapsed * 0.03
         self.age += time_elapsed / 3600
+        self.hunger += time_elapsed * 0.03
         self.last_interaction_time = current_time
 
-    def feed(self, food):
+    def feed(self):
         self.update()
-        if food == 'healthy':
-            self.health += 5
-            self.weight += 1
-        elif food == 'junk':
-            self.happiness += 10
-            self.weight += 2
-            self.health -= 5
+        self.health += 5
+        self.weight += 1
+        self.hunger = 0
         self.check_limits()
 
     def wash(self):
@@ -284,6 +281,7 @@ while running:
             if buttons[0].is_clicked(pos):
                 feedPressed = True
                 print("Feed button pressed")
+                thisTamagotchi.feed()
             elif buttons[1].is_clicked(pos):
                 washPressed = True
                 print("Wash button pressed")
