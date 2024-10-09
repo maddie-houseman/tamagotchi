@@ -136,6 +136,7 @@ class Tamagotchi:
         self.hunger += time_elapsed * 0.03
         self.last_interaction_time = current_time
 
+#FOR EVERY ACTIVITY TRY ADD SOME SORT OF GRAPHIC WITHING THE FUNCTION THAT JUST DISPLAYS IT IN SOME WAY (functions are already called upon later)
     def feed(self):
         self.update()
         self.health += 5
@@ -163,6 +164,19 @@ class Tamagotchi:
         self.update()
         self.health = 100
         self.check_limits()
+
+    def workout(self):
+        self.update()
+        self.health += 20
+        self.weight-= 5
+        self.strength+= 30
+        self.check_limits()
+    
+    def study(self):
+        self.update()
+        self.intelligence +=30
+        self.happiness-=5
+
 
     def check_limits(self):
         self.health = max(0, min(100, self.health))
@@ -285,21 +299,28 @@ while running:
             elif buttons[1].is_clicked(pos):
                 washPressed = True
                 print("Wash button pressed")
+                thisTamagotchi.wash()
             elif buttons[2].is_clicked(pos):
                 playPressed = True
                 print("Play button pressed")
+                thisTamagotchi.play()
             elif buttons[3].is_clicked(pos):
                 sleepPressed = True
                 print("Sleep button pressed")
+                thisTamagotchi.sleep()
             elif buttons[4].is_clicked(pos):
                 doctorPressed = True
                 print("Doctor button pressed")
+                thisTamagotchi.doctor()
             elif buttons[5].is_clicked(pos):
                 workoutPressed = True
                 print("Workout button pressed")
+                thisTamagotchi.workout()
             elif buttons[6].is_clicked(pos):
                 studyPressed = True
                 print("Study button pressed")
+                thisTamagotchi.study()
+                
     
     pygame.display.flip()
 
