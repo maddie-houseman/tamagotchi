@@ -44,6 +44,7 @@ workoutPressed = False
 studyPressed = False
 play_image_displayed = False
 
+
 # Button class
 class Button:
     def __init__(self, x, y, width, height, text):
@@ -283,58 +284,47 @@ while running:
     
     # Display Tamagotchi stats
     display_stats()
-
+    
     # Draw buttons
     for button in buttons:
         button.draw(screen)
-
-    # Check if the play image should be displayed
-    if play_image_displayed:
-        # Display the play image at the center of the screen
-        screen.blit(play_image, (0, 0))
-
+    
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
         elif event.type == pygame.MOUSEBUTTONDOWN:
             pos = pygame.mouse.get_pos()
-            
-            if play_image_displayed:
-                # Hide the play image on the next screen click
-                play_image_displayed = False
-            else:
-                # Check button clicks
-                if buttons[0].is_clicked(pos):
-                    feedPressed = True
-                    print("Feed button pressed")
-                    thisTamagotchi.feed()
-                elif buttons[1].is_clicked(pos):
-                    washPressed = True
-                    print("Wash button pressed")
-                    thisTamagotchi.wash()
-                elif buttons[2].is_clicked(pos):
-                    playPressed = True
-                    print("Play button pressed")
-                    thisTamagotchi.play()
-                    # Show the play image when the "Play" button is clicked
-                    play_image_displayed = True
-                elif buttons[3].is_clicked(pos):
-                    sleepPressed = True
-                    print("Sleep button pressed")
-                    thisTamagotchi.sleep()
-                elif buttons[4].is_clicked(pos):
-                    doctorPressed = True
-                    print("Doctor button pressed")
-                    thisTamagotchi.doctor()
-                elif buttons[5].is_clicked(pos):
-                    workoutPressed = True
-                    print("Workout button pressed")
-                    thisTamagotchi.workout()
-                elif buttons[6].is_clicked(pos):
-                    studyPressed = True
-                    print("Study button pressed")
-                    thisTamagotchi.study()
-
+            # Check button clicks
+            if buttons[0].is_clicked(pos):
+                feedPressed = True
+                print("Feed button pressed")
+                thisTamagotchi.feed()
+            elif buttons[1].is_clicked(pos):
+                washPressed = True
+                print("Wash button pressed")
+                thisTamagotchi.wash()
+            elif buttons[2].is_clicked(pos):
+                playPressed = True
+                print("Play button pressed")
+                thisTamagotchi.play()
+            elif buttons[3].is_clicked(pos):
+                sleepPressed = True
+                print("Sleep button pressed")
+                thisTamagotchi.sleep()
+            elif buttons[4].is_clicked(pos):
+                doctorPressed = True
+                print("Doctor button pressed")
+                thisTamagotchi.doctor()
+            elif buttons[5].is_clicked(pos):
+                workoutPressed = True
+                print("Workout button pressed")
+                thisTamagotchi.workout()
+            elif buttons[6].is_clicked(pos):
+                studyPressed = True
+                print("Study button pressed")
+                thisTamagotchi.study()
+                
+    
     pygame.display.flip()
 
 # Quit pygame
