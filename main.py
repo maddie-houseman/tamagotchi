@@ -86,13 +86,7 @@ def display_tamagotchi(age):
     else:
         tamagotchi_image = tamagotchi_old
 
-    # Calculate the center position of the character in the reduced top-left space
-    available_width = SCREEN_WIDTH
-    available_height = SCREEN_HEIGHT - BUTTON_HEIGHT
-    tamagotchi_x = (available_width - tamagotchi_image.get_width()) // 2
-    tamagotchi_y = (available_height - tamagotchi_image.get_height()) // 4  # Slightly higher to leave room for the buttons
-
-    screen.blit(tamagotchi_image, (tamagotchi_x, tamagotchi_y))
+    screen.blit(tamagotchi_image, (150, 100))
 
 class Tamagotchi:
     def __init__(self, name):
@@ -335,6 +329,19 @@ while running:
                     print("Study button pressed")
                     thisTamagotchi.study()
 
+            # Update the tamagotchi_stats dictionary with the new values after each action
+            tamagotchi_stats = {
+                "name": thisTamagotchi.name_getter(),
+                "health": thisTamagotchi.health_getter(),
+                "happiness": thisTamagotchi.happiness_getter(),
+                "age": int(thisTamagotchi.age_getter()),  # Convert age to integer for display
+                "weight": thisTamagotchi.weight_getter(),
+                "intelligence": thisTamagotchi.intelligence_getter(),
+                "hunger": thisTamagotchi.hunger_getter(),
+                "strength": thisTamagotchi.strength_getter()
+            }
+
+    # Refresh display after actions
     pygame.display.flip()
 
 # Quit pygame
