@@ -332,13 +332,13 @@ while running:
             # Update the tamagotchi_stats dictionary with the new values after each action
             tamagotchi_stats = {
                 "name": thisTamagotchi.name_getter(),
-                "health": thisTamagotchi.health_getter(),
-                "happiness": thisTamagotchi.happiness_getter(),
+                "health": int(thisTamagotchi.health_getter()),
+                "happiness": int(thisTamagotchi.happiness_getter()),
                 "age": int(thisTamagotchi.age_getter()),  # Convert age to integer for display
-                "weight": thisTamagotchi.weight_getter(),
-                "intelligence": thisTamagotchi.intelligence_getter(),
-                "hunger": thisTamagotchi.hunger_getter(),
-                "strength": thisTamagotchi.strength_getter()
+                "weight": int(thisTamagotchi.weight_getter()),
+                "intelligence": int(thisTamagotchi.intelligence_getter()),
+                "hunger": int(thisTamagotchi.hunger_getter()),
+                "strength": int(thisTamagotchi.strength_getter())
             }
 
     # Refresh display after actions
